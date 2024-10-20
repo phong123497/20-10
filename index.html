@@ -383,6 +383,120 @@
                 opacity: 0.7;
             }
         }
+
+        @media (max-width: 500px) {
+            .letter {
+                transform: scale(0.75);
+                /* Scale down to 3/4 of original size */
+                transform-origin: top;
+                /* Set the origin for scaling */
+            }
+
+            .valentines {
+                top: 37.5px;
+                /* 75% of 50px */
+            }
+
+            .text {
+                font-size: 21px;
+                /* 75% of 28px */
+            }
+
+            .heart {
+                height: 22.5px;
+                /* 75% of 30px */
+                width: 22.5px;
+                /* 75% of 30px */
+            }
+
+            .card {
+                width: 202.5px;
+                /* 75% of 270px */
+                height: 127.5px;
+                /* 75% of 170px */
+            }
+
+            .envelope {
+                width: 225px;
+                /* 75% of 300px */
+                height: 150px;
+                /* 75% of 200px */
+            }
+
+            .envelope:before {
+                width: 159px;
+                /* 75% of 212px */
+                height: 159px;
+                /* 75% of 212px */
+                top: -78.75px;
+                /* 75% of -105px */
+                left: 33px;
+                /* 75% of 44px */
+            }
+
+            .card:before {
+                width: 180px;
+                /* 75% of 240px */
+                height: 105px;
+                /* 75% of 140px */
+                left: 9px;
+                /* 75% of 12px */
+                top: 9px;
+                /* 75% of 12px */
+            }
+
+            .one,
+            .two,
+            .three,
+            .four,
+            .five {
+                height: 7.5px;
+                /* 75% of 10px */
+                width: 7.5px;
+                /* 75% of 10px */
+            }
+
+            .one:before,
+            .one:after,
+            .two:before,
+            .two:after,
+            .three:before,
+            .three:after,
+            .four:before,
+            .four:after,
+            .five:before,
+            .five:after {
+                height: 7.5px;
+                /* 75% of 10px */
+                width: 7.5px;
+                /* 75% of 10px */
+            }
+            .front {
+                border-right: 135px solid #f4978e; /* 75% of 180px */
+                border-top: 71.25px solid transparent; /* 75% of 95px */
+                border-bottom: 75px solid transparent; /* 75% of 100px */
+                left: 90px; /* 75% of 120px */
+                top: 3.75px; /* 75% of 5px */
+            }
+
+            .front:before {
+                border-left: 225px solid #f8ad9d; /* 75% of 300px */
+                border-top: 146.25px solid transparent; /* 75% of 195px */
+                left: -90px; /* 75% of -120px */
+                top: -71.25px; /* 75% of -95px */
+            }
+
+            .shadow {
+                width: 247.5px;
+                /* 75% of 330px */
+                height: 18.75px;
+                /* 75% of 25px */
+                top: 198.75px;
+                /* 75% of 265px */
+                left: -11.25px;
+                /* 75% of -15px */
+            }
+        }
     </style>
     <style>
         svg {
@@ -396,6 +510,15 @@
             left: 0;
             right: 0;
             z-index: 1;
+        }
+
+        @media (max-width: 500px) {
+            #theSvg {
+                width: 144%;
+                left: -100px;
+                /* Adjust position */
+                right: 0;
+            }
         }
 
         text {
@@ -542,6 +665,11 @@
 
         .giftbox img {
             width: 100%;
+        }
+        @media (max-width: 500px) {
+            .giftbox img {
+            width: 50%;
+        }
         }
 
         .textLetter {
@@ -951,7 +1079,7 @@
                 document.querySelector("#theSvg").style.display = "inherit"
 
                 rid = window.requestAnimationFrame(Typing);
-                
+
                 function addBackgroundMusic(src) {
                     let music = document.createElement('audio');
                     music.src = src;
